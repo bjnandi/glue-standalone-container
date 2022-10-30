@@ -22,7 +22,7 @@ RUN apt update; apt install mysql-server wget ca-certificates -y --no-install-re
     mysql -e "CREATE USER '$APP_DB_USER'@'%' IDENTIFIED BY '$APP_DB_PASS';"; \
     mysql -e "GRANT ALL ON $APP_DB.* TO '$APP_DB_PASS'@'%';"; \
     wget -O ./glue_dump.sql ${DB_DUMP_FILE_LINK}; \
-    mysql -uroot $$APP_DB < ./glue_dump.sql; \
+    mysql -uroot $APP_DB < ./glue_dump.sql; \
     mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY '${MYSQL_ROOT_PASSWORD}';" 
     
 
