@@ -1,11 +1,11 @@
-Welcome to Cloudboost
+<h>Welcome to Cloudboost</h>
 
 This repo containers standalone dokcerfile to create 3 images to deploy glue app
 
 
 <strong>How user</strong>
 
-First You need to build a image from dockerfile by following commands
+##First You need to build a image from dockerfile by following commands
 
 First goto the directory where containes dockefiles the enter the command as below
 
