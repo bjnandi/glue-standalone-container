@@ -1,5 +1,27 @@
 FROM ubuntu
 
+########## APP CONFIG ###########
+
+ENV WEB_ADDRESS=10,8.215.16
+ENV APP_DB=laravel
+ENV APP_DB_USER=laravel
+ENV APP_DB_PASS=laravel
+
+########## APP CONFIG ###########
+###########REPO LINK#############
+
+ENV REPO_LINK=https://github.com/Team-Cloudboost/glue-with-composer-preinstalled.git
+ENV REPO_BRANCH=main
+ENV REPO_PROJECT_FOLDER=.
+
+###########REPO LINK#############
+
+ENV BACK_HOST=10.8.215.16
+ENV DB_HOST=10.8.215.16
+
+
+
+
 
 ENV TZ=Asia/Dhaka \
     DEBIAN_FRONTEND=noninteractive
@@ -27,8 +49,9 @@ RUN apt update && apt install \
     git remote add origin $REPO_LINK; \
     git fetch origin; \
     git checkout origin/$REPO_BRANCH -- $REPO_PROJECT_FOLDER; \
-    #Composer Install and Key Generate
-    #Setting UP Entrypoint
     rm -rf /var/lib/apt/lists/*;
+    #Setting UP Entrypoint
+    
 
 RUN ["chmod", "+x", "/backend-docker-entrypoint.sh"] 
+ENTRYPOINT [ "sh", "/backend-docker-entrypoint.sh" ]
