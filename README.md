@@ -50,6 +50,14 @@ APP_DB_USER [DATABASE USERNAME]
 APP_DB_PASS [DATABASE PASSWORD]
 
 
+Images are available at Dockerhub
+
+Frontend : teamcloudboost/glue-independent:frontend
+Backend  : teamcloudboost/glue-independent:Backend
+Database : teamcloudboost/glue-independent:Database
+
+
+
 
 
 
