@@ -15,7 +15,7 @@ WORKDIR /glue
 ENV TZ=Asia/Dhaka \
     DEBIAN_FRONTEND=noninteractive
 
-RUN apt update; apt install mysql-server -y --no-install-recommends; \
+RUN apt update; apt install mysql-server curl -y --no-install-recommends; \
     sed -i 's,bind-address.*,bind-address = 0.0.0.0,g' /etc/mysql/mysql.conf.d/mysqld.cnf; \
     /etc/init.d/mysql start; \
     mysql -e "CREATE DATABASE $APP_DB;";\
