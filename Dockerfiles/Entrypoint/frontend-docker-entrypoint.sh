@@ -8,5 +8,5 @@ sed -i "s,DB_DATABASE.*,DB_DATABASE=$APP_DB,g" /public_html/$REPO_PROJECT_FOLDER
 sed -i "s,DB_USERNAME.*,DB_USERNAME=$APP_DB_USER,g" /public_html/$REPO_PROJECT_FOLDER/.env;
 sed -i "s,DB_PASSWORD.*,DB_PASSWORD=$APP_DB_PASS,g" /public_html/$REPO_PROJECT_FOLDER/.env;
 sed -i "s,DB_HOST.*,DB_HOST=$DB_HOST,g" /public_html/$REPO_PROJECT_FOLDER/.env;
-nginx -g 'damemon off;';
+nginx -g 'daemon off;';
 tail -f /dev/null
