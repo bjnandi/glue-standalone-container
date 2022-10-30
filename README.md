@@ -27,34 +27,34 @@ Availble environments variables are given below
 
 For DATABASE Container ( Database server will configured as per variable values) :
 
-MYSQL_ROOT_PASSWORD [DATABASE ROOT PASSWORD]
-APP_DB [DB NAME FOR GLUE APP]
-APP_DB_USER [DB_USERNAME]
-APP_DB_PASS [DB_PASSWORD]
+MYSQL_ROOT_PASSWORD [DATABASE ROOT PASSWORD]</br>
+APP_DB [DB NAME FOR GLUE APP]</br>
+APP_DB_USER [DB_USERNAME]</br>
+APP_DB_PASS [DB_PASSWORD]</br>
 
 
 
 For Frontend Container :
 
-SERVER_NAME [NGINX SERVER NAME]
-APP_DB [DATABASE HOST FOR GLUE APP]
-APP_DB_USER [DATABASE USERNAME]
-APP_DB_PASS [DATABASE PASSWORD]
-DB_HOST [DATABASE SERVER IP]
-BACK_HOST [BACKEND SERVER IP]
+SERVER_NAME [NGINX SERVER NAME]</br>
+APP_DB [DATABASE HOST FOR GLUE APP]</br>
+APP_DB_USER [DATABASE USERNAME]</br>
+APP_DB_PASS [DATABASE PASSWORD]</br>
+DB_HOST [DATABASE SERVER IP]</br>
+BACK_HOST [BACKEND SERVER IP]</br>
 
 For Frontend Container :
 
-APP_DB [DATABASE HOST FOR GLUE APP]
-APP_DB_USER [DATABASE USERNAME]
-APP_DB_PASS [DATABASE PASSWORD]
+APP_DB [DATABASE HOST FOR GLUE APP]</br>
+APP_DB_USER [DATABASE USERNAME]</br>
+APP_DB_PASS [DATABASE PASSWORD]</br>
 
 
 Images are available at Dockerhub
 
-Frontend : teamcloudboost/glue-independent:frontend
-Backend  : teamcloudboost/glue-independent:Backend
-Database : teamcloudboost/glue-independent:Database
+Frontend : teamcloudboost/glue-independent:frontend</br>
+Backend  : teamcloudboost/glue-independent:Backend</br>
+Database : teamcloudboost/glue-independent:Database</br>
 
 
 
