@@ -38,11 +38,6 @@ RUN apk add git; \
     chown -R www-data:www-data /public_html/$REPO_PROJECT_FOLDER/storage; \
     chown -R www-data:www-data /public_html/$REPO_PROJECT_FOLDER/bootstrap/cache;
 
-# Install composer (php package manager)
-RUN apk --update add mysql-client mariadb-connector-c libjpeg-turbo-dev libpng-dev libxml2-dev libzip-dev freetype-dev; \
-    docker-php-ext-install soap sockets exif bcmath pdo_mysql pcntl ; \
-    docker-php-ext-configure gd --with-jpeg --with-freetype; \
-    docker-php-ext-install gd mysqli pdo_mysql zip ;
 
 
 
