@@ -8,7 +8,7 @@ ENV APP_DB_PASS=laravel
 
 ######DATBASE COFIG END####################
 
-ENV $DB_DUMP_FILE_LINK=https://raw.githubusercontent.com/Team-Cloudboost/glue-with-composer-preinstalled/main/bahonbdc_ticket.sql
+ENV DB_DUMP_FILE_LINK=https://raw.githubusercontent.com/Team-Cloudboost/glue-with-composer-preinstalled/main/bahonbdc_ticket.sql
 
 WORKDIR /glue
 
