@@ -6,8 +6,8 @@ ENV SERVER_NAME=10,8.215.16
 ENV APP_DB=laravel
 ENV APP_DB_USER=laravel
 ENV APP_DB_PASS=laravel
-ENV DB_HOST=10.8.215.16
-ENV BACK_HOST=10.8.215.16
+ENV DB_HOST=localhost
+ENV BACK_HOST=localhost
 
 ########## APP CONFIG ###########
 ###########REPO LINK#############
