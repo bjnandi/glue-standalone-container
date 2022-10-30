@@ -1,0 +1,53 @@
+FROM nginx:alpine
+
+########## APP CONFIG ###########
+
+ENV WEB_ADDRESS=
+ENV APP_DB=
+ENV APP_DB_USER=
+ENV APP_DB_PASS=
+
+########## APP CONFIG ###########
+###########REPO LINK#############
+
+ENV REPO_LINK=
+ENV REPO_BRANCH=
+ENV REPO_PROJECT_FOLDER=
+
+###########REPO LINK#############
+
+ENV CNTR_BACK=
+ENV DB_HOST=
+ENV CNTR_DB=
+
+
+COPY ./config/nginx/default.conf /etc/nginx/conf.d/default.conf
+
+WORKDIR /public_html
+
+RUN apk add git; \
+    mkdir /public_html; \
+    cd /public_html; \
+    # Git Job start here
+    git init; \
+    git remote add origin $REPO_LINK; \
+    git fetch origin; \
+    git checkout origin/$REPO_BRANCH -- $REPO_PROJECT_FOLDER; \
+    # Add user for NGINX
+    adduser -u 82 -D -S -G www-data www-data; \
+    sed -i "s/user  nginx;/user  www-data;/g" /etc/nginx/nginx.conf; \
+    chown -R www-data:www-data /public_html/$REPO_PROJECT_FOLDER/storage; \
+    chown -R www-data:www-data /public_html/$REPO_PROJECT_FOLDER/bootstrap/cache;
+
+# Install composer (php package manager)
+RUN apk --update add mysql-client mariadb-connector-c libjpeg-turbo-dev libpng-dev libxml2-dev libzip-dev freetype-dev; \
+    docker-php-ext-install soap sockets exif bcmath pdo_mysql pcntl ; \
+    docker-php-ext-configure gd --with-jpeg --with-freetype; \
+    docker-php-ext-install gd mysqli pdo_mysql zip ;
+
+
+
+
+
+
+    

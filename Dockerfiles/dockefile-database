@@ -1,0 +1,29 @@
+FROM ubuntu
+
+######DATBASE COFIG START##################
+ENV MYSQL_ROOT_PASSWORD=StrongPass
+ENV $APP_DB=javadb
+ENV $APP_DB_USER=java
+ENV $APP_DB_PASS=java_pass
+
+######DATBASE COFIG END####################
+
+ENV $DB_DUMP_FILE_LINK=https://raw.githubusercontent.com/Team-Cloudboost/glue-with-composer-preinstalled/main/bahonbdc_ticket.sql
+
+WORKDIR /glue
+
+ENV TZ=Asia/Dhaka \
+    DEBIAN_FRONTEND=noninteractive
+
+RUN apt update; apt install mysql-server -y --no-install-recommends; \
+    sed -i 's,bind-address.*,bind-address = 0.0.0.0,g' /etc/mysql/mysql.conf.d/mysqld.cnf; \
+    /etc/init.d/mysql start; \
+    mysql -e "CREATE DATABASE $APP_DB;";\
+    mysql -e "CREATE USER '$APP_DB_USER'@'%' IDENTIFIED BY '$APP_DB_PASS';"; \
+    mysql -e "GRANT ALL ON $APP_DB.* TO '$APP_DB_PASS'@'%';"; \
+    wget -O glue_dump.sql $DB_DUMP_FILE_LINK; \
+    mysql ${$APP_DB} < glue_dump.sql; \
+    mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY '${MYSQL_ROOT_PASSWORD}';" 
+    
+
+ENTRYPOINT [ "mysqld"]
