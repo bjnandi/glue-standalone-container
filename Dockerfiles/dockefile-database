@@ -2,9 +2,9 @@ FROM ubuntu
 
 ######DATBASE COFIG START##################
 ENV MYSQL_ROOT_PASSWORD=StrongPass
-ENV $APP_DB=laravel
-ENV $APP_DB_USER=laravel
-ENV $APP_DB_PASS=laravel
+ENV APP_DB=laravel
+ENV APP_DB_USER=laravel
+ENV APP_DB_PASS=laravel
 
 ######DATBASE COFIG END####################
 
