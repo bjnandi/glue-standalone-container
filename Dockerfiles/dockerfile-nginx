@@ -2,23 +2,22 @@ FROM nginx:alpine
 
 ########## APP CONFIG ###########
 
-ENV WEB_ADDRESS=
-ENV APP_DB=
-ENV APP_DB_USER=
-ENV APP_DB_PASS=
+ENV WEB_ADDRESS=10,8.215.16
+ENV APP_DB=laravel
+ENV APP_DB_USER=laravel
+ENV APP_DB_PASS=laravel
 
 ########## APP CONFIG ###########
 ###########REPO LINK#############
 
-ENV REPO_LINK=
-ENV REPO_BRANCH=
-ENV REPO_PROJECT_FOLDER=
+ENV REPO_LINK=https://github.com/Team-Cloudboost/glue-with-composer-preinstalled.git
+ENV REPO_BRANCH=main
+ENV REPO_PROJECT_FOLDER=.
 
 ###########REPO LINK#############
 
-ENV CNTR_BACK=
-ENV DB_HOST=
-ENV CNTR_DB=
+ENV BACK_HOST=10.8.215.16
+ENV DB_HOST=10.8.215.16
 
 
 COPY ./config/nginx/default.conf /etc/nginx/conf.d/default.conf
