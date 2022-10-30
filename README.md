@@ -3,7 +3,7 @@
 This repo containers standalone dokcerfile to create 3 images to deploy glue app
 
 
-<strong>How user</strong>
+<strong>How to use</strong>
 
 ##First You need to build a image from dockerfile by following commands
 
