@@ -2,7 +2,7 @@ FROM nginx:alpine
 
 ########## APP CONFIG ###########
 
-ENV SERVER_NAME=10,8.215.16
+ENV SERVER_NAME=IP_ADDRESS_OR_DOMAIN
 ENV APP_DB=laravel
 ENV APP_DB_USER=laravel
 ENV APP_DB_PASS=laravel
