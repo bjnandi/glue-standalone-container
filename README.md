@@ -1,4 +1,4 @@
-<h>Welcome to Cloudboost</h>
+<h>Welcome to Team Octa</h>
 
 This repo containers standalone dokcerfile to create 3 images to deploy glue app
 
@@ -56,7 +56,7 @@ APP_DB_PASS [DATABASE PASSWORD]</br>
 
 <p>docker run -itd -p 9000:9000 --name glue-backend -e  APP_DB=laravel -e APP_DB_USER=laravel -e APP_DB_PASS=laravel -e DB_HOST=192.168.0.5  teamcloudboost/glue-independent:backend</p>
 
-============================================================================
+==========================================================================
 
 Images are available at Dockerhub
 
