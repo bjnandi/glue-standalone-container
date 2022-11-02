@@ -45,7 +45,8 @@ DB_HOST [DATABASE SERVER IP]</br>
 BACK_HOST [BACKEND SERVER IP]</br>
 
 <p>docker run -itd -p 80:80 --name glue-frontend -e  APP_DB=laravel -e APP_DB_USER=laravel -e APP_DB_PASS=laravel -e DB_HOST=192.168.0.5  -e SERVER_NAME=192.168.0.5 -e BACK_HOST=192.168.0.5 teamcloudboost/glue-independent:frontend </p>
-======================================================================================================================================================================
+=========================================================================================
+
 For Backend Container :
 
 DB_HOST [DATABASE HOST/SERVER IP]</br>
@@ -54,7 +55,7 @@ APP_DB_USER [DATABASE USERNAME]</br>
 APP_DB_PASS [DATABASE PASSWORD]</br>
 
 <p>docker run -itd -p 9000:9000 --name glue-backend -e  APP_DB=laravel -e APP_DB_USER=laravel -e APP_DB_PASS=laravel -e DB_HOST=192.168.0.5  teamcloudboost/glue-independent:backend</p>
-=======================================================================================================================================================================
+=============================================================================================
 
 Images are available at Dockerhub
 
