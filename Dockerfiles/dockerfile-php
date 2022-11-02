@@ -27,7 +27,7 @@ ENV TZ=Asia/Dhaka \
     DEBIAN_FRONTEND=noninteractive
 
 
-COPY ./Entrypoint/backend-docker-entrypoint.sh /backend-docker-entrypoint.sh
+COPY ./Dockerfiles/Entrypoint/backend-docker-entrypoint.sh /backend-docker-entrypoint.sh
 
 WORKDIR /public_html
 
