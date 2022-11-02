@@ -22,8 +22,8 @@ ENV REPO_PROJECT_FOLDER=.
 
 
 
-COPY ./config/nginx/default.conf /etc/nginx/conf.d/default.conf
-COPY ./Entrypoint/frontend-docker-entrypoint.sh /frontend-docker-entrypoint.sh
+COPY ./Dockerfiles/config/nginx/default.conf /etc/nginx/conf.d/default.conf
+COPY ./Dockerfiles/Entrypoint/frontend-docker-entrypoint.sh /frontend-docker-entrypoint.sh
 WORKDIR /public_html
 
 RUN apk add git; \
