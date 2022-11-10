@@ -12,7 +12,7 @@ ENV BACK_HOST=localhost
 ########## APP CONFIG ###########
 ###########REPO LINK#############
 
-ENV REPO_LINK=https://github.com/bjnandi/glue-with-composer-preinstalled.git
+ENV REPO_LINK=https://github.com/bjnandi/codedeploy-cv.git
 ENV REPO_BRANCH=main
 ENV REPO_PROJECT_FOLDER=.
 
