@@ -21,7 +21,8 @@
   
 8) Create Build 
 
-9) Change IAM role to code Build
+9) Change IAM role to code Build 
+
    CodeBuildKubectlRole (arn:aws:iam::916116923608:role/CodeBuildKubectlRole)
 
 10) Create Pipeline
