@@ -1,4 +1,29 @@
-<h>Welcome to Team Octa</h>
+<h1>Welcome to Team Octa</h1>
+
+
+# README #
+
+1) Install AWS cli
+2) Install Eksctl 
+3) Install Kubectl
+
+4) Create Cluster </br>
+  eksctl create cluster -f cluster.yaml
+
+5) Run </br>
+  create_iam_role.sh
+  
+6) Run </br>
+  eksctl create iamidentitymapping --cluster basic-cluster --arn arn:aws:iam::916116923608:role/CodeBuildKubectlRole --group system:masters --username CodeBuildKubectlRole
+
+7) Run for View  IAM  </br>
+  kubectl get configmaps aws-auth -n kube-system -o yaml > aws-auth.yaml
+  
+8) Create Build 
+
+9) Create Pipeline
+
+################################################################################
 
 This repo containers standalone dokcerfile to create 3 images to deploy glue app
 
