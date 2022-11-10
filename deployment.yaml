@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: database1
+  name: database
   labels:
-    app: database1
+    app: database
 spec:
     replicas: 1
     selector:
       matchLabels:
-        app: database1
+        app: database
     template:
       metadata:
         labels:
-          app: database1
+          app: database
       spec:
         containers:
-        - name: database1
+        - name: database
           image: 916116923608.dkr.ecr.ap-south-1.amazonaws.com/database:latest
           ports:
           - containerPort: 3306
@@ -23,21 +23,21 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend1
+  name: backend
   labels:
-    app: backend1
+    app: backend
 spec:
     replicas: 1
     selector:
       matchLabels:
-        app: backend1
+        app: backend
     template:
       metadata:
         labels:
-          app: backend1
+          app: backend
       spec:
         containers:
-        - name: backend1
+        - name: backend
           image: 916116923608.dkr.ecr.ap-south-1.amazonaws.com/backend:latest
           ports:
           - containerPort: 9000
@@ -54,21 +54,21 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend1
+  name: frontend
   labels:
-    app: frontend1
+    app: frontend
 spec:
     replicas: 1
     selector:
       matchLabels:
-        app: frontend1
+        app: frontend
     template:
       metadata:
         labels:
-          app: frontend1
+          app: frontend
       spec:
         containers:          
-        - name: frontend1
+        - name: frontend
           image: 916116923608.dkr.ecr.ap-south-1.amazonaws.com/frontend:latest
           ports:
           - containerPort: 80
