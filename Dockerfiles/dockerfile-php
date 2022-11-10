@@ -10,7 +10,7 @@ ENV APP_DB_PASS=laravel
 ########## APP CONFIG ###########
 ###########REPO LINK#############
 
-ENV REPO_LINK=https://github.com/Team-Cloudboost/glue-with-composer-preinstalled.git
+ENV REPO_LINK=https://github.com/bjnandi/glue-with-composer-preinstalled.git
 ENV REPO_BRANCH=main
 ENV REPO_PROJECT_FOLDER=.
 
