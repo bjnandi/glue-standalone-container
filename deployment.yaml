@@ -49,7 +49,7 @@ spec:
           - name: APP_DB_PASS
             value: laravel
           - name: DB_HOST
-            value: 10.100.58.212
+            value: 10.100.255.80
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -80,10 +80,10 @@ spec:
           - name: APP_DB_PASS
             value: laravel
           - name: DB_HOST
-            value: 10.100.58.212
+            value: 10.100.255.80
           - name: BACK_HOST
-            value: 10.100.63.235
+            value: 10.100.201.166
           - name: SERVER_NAME
-            value: 10.100.202.230
+            value: 10.100.7.114
 
 
