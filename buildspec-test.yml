@@ -25,11 +25,15 @@ phases:
     - docker images
     - sudo docker run -d -p 80:80 --name  $IMAGE_REPO_NAME_B  $IMAGE_REPO_NAME_B:$IMAGE_TAG
     - docker ps
+    
+     docker exec $IMAGE_REPO_NAME_B vendor/bin/phpstan analyse bootstrap
+     docker exec $IMAGE_REPO_NAME_B vendor/bin/phpstan analyse public
+     docker exec $IMAGE_REPO_NAME_B vendor/bin/phpstan analyse stubs
 
  post_build: # Push the Docker image to the ECR
   commands:
    - echo Build completed on `date`
    - echo Pushing the Docker image...
   # - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME_F:latest
-   - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME_B:latest
+  # - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME_B:latest
   # - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME_D:latest
