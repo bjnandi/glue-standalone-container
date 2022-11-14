@@ -26,9 +26,9 @@ phases:
     - sudo docker run -d -p 80:80 --name  $IMAGE_REPO_NAME_B  $IMAGE_REPO_NAME_B:$IMAGE_TAG
     - docker ps
     
-     docker exec $IMAGE_REPO_NAME_B vendor/bin/phpstan analyse bootstrap
-     docker exec $IMAGE_REPO_NAME_B vendor/bin/phpstan analyse public
-     docker exec $IMAGE_REPO_NAME_B vendor/bin/phpstan analyse stubs
+     docker exec $IMAGE_REPO_NAME_B ls -la
+     docker exec $IMAGE_REPO_NAME_B php artisan test
+     docker exec $IMAGE_REPO_NAME_B php artisan test --testsuite=Unit --stop-on-failure
 
  post_build: # Push the Docker image to the ECR
   commands:
