@@ -9,7 +9,7 @@ phases:
       - gradle -version
   build:
     commands:
-      - ./gradlew clean build
+   
 reports:
   arn:aws:codebuild:ap-south-1:916116923608:report-group/Unit_test:
     files:
