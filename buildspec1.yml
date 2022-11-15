@@ -14,7 +14,7 @@ reports:
   arn:aws:codebuild:ap-south-1:916116923608:report-group/code_coverrage:
     files:
       - '**/*'
-    base-directory: 'build/test-results/test'
+    base-directory: 'build'
   arn:aws:codebuild:ap-south-1:916116923608:report-group/code_coverrage:
     files:
       - 'build/jacoco_report/test/jacocoTestReport.xml'
