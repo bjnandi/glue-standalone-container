@@ -9,12 +9,10 @@ phases:
       - gradle -version
   build:
     commands:
-    - ls
 reports:
   arn:aws:codebuild:ap-south-1:916116923608:report-group/code_coverrage:
     files:
       - '**/*'
-      - ls
     base-directory: 'glue-standalone-container/build/jacoco_report/test'
   arn:aws:codebuild:ap-south-1:916116923608:report-group/code_coverrage:
     files:
