@@ -11,11 +11,11 @@ phases:
     commands:
    
 reports:
-  arn:aws:codebuild:ap-south-1:916116923608:report-group/Unit_test:
+  arn:aws:codebuild:ap-south-1:916116923608:report-group/unit_tttt:
     files:
       - '**/*'
     base-directory: 'build/test-results/test'
-  arn:aws:codebuild:ap-south-1:916116923608:report-group/Unit_test:
+  arn:aws:codebuild:ap-south-1:916116923608:report-group/unit_tttt:
     files:
       - 'build/jacoco_report/test/jacocoTestReport.xml'
     file-format: 'JACOCOXML'  
