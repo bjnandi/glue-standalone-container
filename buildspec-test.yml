@@ -29,11 +29,7 @@ phases:
     - docker run -itd -p 9000:9000 --name glue-backend -e APP_DB=laravel -e APP_DB_USER=laravel -e APP_DB_PASS=laravel -e DB_HOST=hostname -I $IMAGE_REPO_NAME_B:$IMAGE_TAG
     - docker run -itd -p 80:80 --name glue-frontend -e APP_DB=laravel -e APP_DB_USER=laravel -e APP_DB_PASS=laravel -e DB_HOST=hostname -I -e SERVER_NAME=hostname -I -e BACK_HOST=hostname -I $IMAGE_REPO_NAME_F:$IMAGE_TAG
     - curl hostname -I
- test: # test image
-  commands:    
-     docker exec $IMAGE_REPO_NAME_B ls -la
-     docker exec $IMAGE_REPO_NAME_B php artisan test
-     docker exec $IMAGE_REPO_NAME_B php artisan test --testsuite=Unit --stop-on-failure
+
 
  post_build: # Push the Docker image to the ECR
   commands:
