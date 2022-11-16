@@ -24,10 +24,10 @@ phases:
     - docker tag $IMAGE_REPO_NAME_D:$IMAGE_TAG $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME_D:$IMAGE_TAG 
     - docker images
     - docker ps
-    - hostname -I
+    - IP=hostname -I
     - docker run -itd -p 3306:3306 --name glue-database  $IMAGE_REPO_NAME_D:$IMAGE_TAG
-    - docker run -itd -p 9000:9000 --name glue-backend -e APP_DB=laravel -e APP_DB_USER=laravel -e APP_DB_PASS=laravel -e DB_HOST=hostname -I $IMAGE_REPO_NAME_B:$IMAGE_TAG
-    - docker run -itd -p 80:80 --name glue-frontend -e APP_DB=laravel -e APP_DB_USER=laravel -e APP_DB_PASS=laravel -e DB_HOST=hostname -I -e SERVER_NAME=hostname -I -e BACK_HOST=hostname -I $IMAGE_REPO_NAME_F:$IMAGE_TAG
+    - docker run -itd -p 9000:9000 --name glue-backend -e APP_DB=laravel -e APP_DB_USER=laravel -e APP_DB_PASS=laravel -e DB_HOST=$IP $IMAGE_REPO_NAME_B:$IMAGE_TAG
+    - docker run -itd -p 80:80 --name glue-frontend -e APP_DB=laravel -e APP_DB_USER=laravel -e APP_DB_PASS=laravel -e DB_HOST=$IP -e SERVER_NAME=$IP -e BACK_HOST=$IP $IMAGE_REPO_NAME_F:$IMAGE_TAG
     - curl hostname -I
 
 
