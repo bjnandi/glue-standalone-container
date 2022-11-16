@@ -24,8 +24,7 @@ phases:
     - docker tag $IMAGE_REPO_NAME_D:$IMAGE_TAG $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME_D:$IMAGE_TAG 
     - docker images
     - docker ps
-    - curl ifconfig.me
-    - IP=$(hostname -I)
+    - IP=172.17.0.2
     - echo $IP
     - docker run -itd -p 3306:3306 --name glue-database  $IMAGE_REPO_NAME_D:$IMAGE_TAG
     - docker run -itd -p 9000:9000 --name glue-backend -e APP_DB=laravel -e APP_DB_USER=laravel -e APP_DB_PASS=laravel -e DB_HOST=$IP $IMAGE_REPO_NAME_B:$IMAGE_TAG
