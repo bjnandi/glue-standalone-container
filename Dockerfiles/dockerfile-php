@@ -9,7 +9,7 @@ ENV APP_DB_PASS=laravel
 
 ########## APP CONFIG ###########
 ###########REPO LINK#############
-
+# ENV GIT_REPO=https://codecommite-at-916116923608:xqz76n0sGWkxuvRdOOG60MEC59ykWjANE8JLhmMks7s=@git-codecommit.us-east-1.amazonaws.com/v1/repos/glue_biswajit
 ENV REPO_LINK=https://github.com/bjnandi/glue-with-composer-preinstalled.git
 ENV REPO_BRANCH=main
 ENV REPO_PROJECT_FOLDER=.
